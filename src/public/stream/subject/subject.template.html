@@ -1,0 +1,22 @@
+<ui-view>
+
+    <div class="test">
+        <div class="out">
+            <h1>
+                <span class="uol"></span> Subject</h1>
+        </div>
+
+
+        <button ng-repeat="Subject in SubjectCtrl.subjectList" id="btstyle" class="outline" type="button">
+            <a class="sublink" ui-sref="stream.select.subject({subject:Subject})">
+                 <div class="label">
+                    <span class="hover-effect"></span>
+                 <span class="label-text"> {{ Subject }}</span>
+                 </div>
+               </a>
+ </button>
+
+    </div>
+
+
+</ui-view>

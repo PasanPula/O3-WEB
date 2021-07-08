@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/src/public/stream/stream.css">
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+    });
+</script>
+
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img id="logo" src="/images/logo.png" alt="" class="img-fluid">
+        </div>
+
+        <ul id="menu" class="list-unstyled components">
+
+
+            <li class="subjecta">
+                <a class="sublink" href="#">  Home</a>
+            </li>
+
+            <p class="stream">STREAM</p>
+            <li class="subjectb">
+                <a class="sublink" ui-sref="stream.select({stream:'Science'})">Physical science</a>
+            </li>
+            <li class="subject" ui-sref-active="active">
+                <a class="sublink" ui-sref="stream.select({stream:'Bio'})">Biological science</a>
+            </li class="subject">
+            <li class="subject">
+                <a class="sublink" ui-sref="stream.select({stream:'Art'})">Art</a>
+            </li>
+            <li class="subject">
+                <a class="sublink" ui-sref="stream.select({stream:'Commerce'})">Commerce</a>
+            </li>
+            <li class="subject">
+                <a class="sublink" ui-sref="stream.select({stream:'Technology'})">Technology</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+
+    <div id="content">
+        <button type="button" id="sidebarCollapse" class="navbar-btn ">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+         </button>
+
+        <ui-view>
+            <div class="text-center">
+                <h2>Loading Site...</h2>
+            </div>
+        </ui-view>
+
+    </div>
+
+</div>

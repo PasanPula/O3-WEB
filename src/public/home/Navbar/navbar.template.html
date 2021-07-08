@@ -1,0 +1,163 @@
+<link rel="stylesheet" href="/src/public/home/Navbar/navbar.css">
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img class="nav-logo" src="/images/logo.png" alt="Logo" style="width:140px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                 <span class="navbar-toggler-icon">   
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span>
+            </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav ml-auto topnav">
+            <div class="text-nav">Are you Instructor ?</div>
+            <li class="nav-item px-2">
+
+                <a class="nav-link btn  text-white" type="button" href="#" data-toggle="modal" data-target="#SignInModel">Sign In</a>
+            </li>
+            <li class="nav-item px-2">
+                <a class="nav-link btn text-white" type="button" href="#" data-toggle="modal" data-target="#myModal2">Sign Up</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="modal" id="SignInModel">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Instructor Sign In</h4>
+                    <button id="cls-btn" type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+
+                <form name="SignInForm" action=" " novalidate>
+                    <div class="modal-body">
+
+                        <span class="errormsg" ng-if="SignInForm.SignInEmail.$error.pattern && SignInForm.SignInEmail.$dirty">
+                            *Enter Valid Email
+                          </span>
+
+                        <span class="errormsg" ng-if="SignInForm.SignInEmail.$error.required  && SignInForm.SignInEmail.$touched">
+                               *Required
+                              </span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                            </div>
+                            <input ng-model="email" name="SignInEmail" type="email" class="form-control" placeholder="Email" required ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
+                        </div>
+
+                        <span class="errormsg" ng-if="SignInForm.SignInPassword.$error.required  && SignInForm.SignInPassword.$touched">
+                            *Required
+                           </span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
+                            </div>
+                            <input ng-model="password" name="SignInPassword" id="SignInPassword" type="password" class="form-control" placeholder="Password" required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="submit" ng-disabled="SignInForm.$invalid" class="btn btn-primary">Sign In</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" id="myModal2">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">New Instructor Signup</h4>
+                    <button id="cls-btn" type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <form name="SignUpForm" action=" " novalidate>
+                    <div class="modal-body">
+
+                        <span class="errormsg" ng-if="SignUpForm.InsName.$error.pattern && SignUpForm.InsName.$dirty">
+                            *Enter Letters only
+                          </span>
+                        <span class="errormsg" ng-if="SignUpForm.InsName.$error.required  && SignUpForm.InsName.$touched">
+                            *Required
+                           </span>
+                        <div class="input-group mb-3">
+                            <input ng-model="InsName" name="InsName" type="text" class="form-control" placeholder="Instructor's Name" required ng-pattern="/^[a-zA-Z\s]*$/">
+                        </div>
+
+                        <span class="errormsg" ng-if="SignUpForm.SignUpStream.$error.required  && SignUpForm.SignUpStream.$touched">
+                            *Required
+                           </span>
+                        <div class="input-group mb-3">
+
+                            <select class="form-control" class="stream" name="SignUpStream" ng-model="SignUpStream" required>
+                                            <option value="" selected disabled hidden> 
+                                                Select Your Stream 
+                                            </option>
+                                            <option value="Mathamatics">Mathamatics</option>
+                                            <option value="Science">Science</option>
+                                            <option value="Art">Art</option>
+                                            <option value="Commerce">Commerce</option>
+                                            <option value="Technology">Technology</option>
+                                            
+                                                    
+                                         </select>
+
+                        </div>
+
+
+
+                        <span class="errormsg" ng-if="SignUpForm.SignUpEmail.$error.pattern && SignUpForm.SignUpEmail.$dirty">
+                            *Enter Valid Email
+                          </span>
+
+                        <span class="errormsg" ng-if="SignUpForm.SignUpEmail.$error.required  && SignUpForm.SignUpEmail.$touched">
+                               *Required
+                              </span>
+                        <div class="input-group mb-3">
+                            <input ng-model="SignUpEmail" name="SignUpEmail" type="email" class="form-control" placeholder="Email" required ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
+                        </div>
+
+
+                        <span class="errormsg" ng-if="SignUpForm.Password.$error.required  && SignUpForm.Password.$touched">
+                            *Required
+                        </span>
+                        <div class="input-group mb-3">
+                            <input ng-model="Password" name="Password" type="password" class="form-control" placeholder="Password" required>
+                        </div>
+
+                        <span class="errormsg" ng-if="SignUpForm.PasswordConfirm.$error.compareTo && SignUpForm.PasswordConfirm.$dirty">Password does not match above</span>
+                        <span class="errormsg" ng-if="SignUpForm.PasswordConfirm.$error.required  && SignUpForm.PasswordConfirm.$touched">
+                            *Required
+                        </span>
+                        <div class="input-group mb-3">
+                            <input ng-model="PasswordConfirm" name="PasswordConfirm" type="password" class="form-control" placeholder="Enter Password Again" required compare-to="Password">
+                        </div>
+
+                    </div>
+
+                    <div class=" modal-footer ">
+                        <button ng-disabled="SignUpForm.$invalid" type="submit " class="btn btn-primary ">Sign up</button>
+                        <button type="button " class="btn btn-danger " data-dismiss="modal ">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>

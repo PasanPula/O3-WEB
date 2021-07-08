@@ -1,0 +1,130 @@
+.contain {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    text-align: center;
+    color: #fff;
+    background-color: #303030;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 1);
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+@media (min-width: 575px) and (max-width:985px) {
+    .card-title {
+        font-size: 1.5vh;
+    }
+}
+
+@media (max-width:575px) {
+    .card {
+        width: 100%;
+    }
+}
+
+#btstyle::before,
+#btstyle::after {
+    background-color: transparent;
+    content: "";
+    display: block;
+    position: absolute;
+    height: calc(50% - 0.4rem);
+    width: 100%;
+    border: 1px solid var(--v-outline);
+    left: 0;
+}
+
+#btstyle::before {
+    border-bottom: 0;
+    top: 0;
+}
+
+#btstyle::after {
+    border-top: 0;
+    bottom: 0;
+}
+
+.label::before,
+.label::after {
+    border: 1px solid var(--v-outline);
+}
+
+
+/*=============================================== card button hover================================================*/
+
+ :root {
+    --v-red: rgba(0, 168, 255, 1);
+    --v-white: #ece8e1;
+    --v-black: #0f1923;
+    --v-outline: rgba(236, 232, 225, 0.5);
+}
+
+
+/* LABEL  */
+
+.label {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.label:before {
+    content: "";
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.hover-effect {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 120%;
+    top: 0;
+    left: -5%;
+    z-index: 1;
+    background-color: var(--v-red);
+    transform: translateX(-100%) skew(-10deg);
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+#btstyle:hover .hover-effect {
+    transform: translateX(0) skew(-10deg);
+}
+
+
+/* Label Text */
+
+.label-text {
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+}
+
+
+/* ============================animation text and select stream text style start=========================================*/
+
+.anime {
+    margin-bottom: 50px;
+}
+
+.select-text {
+    color: aliceblue;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 5vh;
+}
+
+
+/* ============================animation text and select stream text style end=========================================*/

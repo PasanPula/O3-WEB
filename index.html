@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Smart Education System for Sri Lankan Advance Level Students">
+    <meta name="keywords" content="Advance Level Examination Sri Lanka,A/L,Mathematics,Commerce,Technology,A/L Sri Lanka,Art" />
+    <meta name="author" content="O3 Education">
+    <link rel="shortcut icon" href="/images/fv.ico" type="image/x-icon" />
+    <title>O3 Education</title>
+</head>
+
+<!--================ Libaray Import ==================-->
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="/library/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+
+<!--================ Preloader ==================-->
+<link rel="stylesheet" href="/src/public/preloader/preloader.css">
+
+<body ng-app="App" ng-cloak ng-strict-di>
+
+    <!--================ Preloader ==================-->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
+
+    <ui-view>
+        <div class="text-center">
+            <h2>Loading Site...</h2>
+        </div>
+    </ui-view>
+
+
+</body>
+
+
+
+<!--================ Libaray Import ==================-->
+<script src="/library/js/jquery-3.5.1.min.js"></script>
+<script src="/library/js/popper.min.js"></script>
+<script src="/library/js/bootstrap.min.js"></script>
+<!-- <script src="./js/jquery.validate.min.js "></script>
+    <script src="./js/additional-methods.min.js "></script> -->
+
+<script src="/library/js/angular.min.js"></script>
+<script src="/library/js/angular-ui-router.min.js"></script>
+
+
+
+<!--================ Main Modules ==================-->
+<script src="/src/App.module.js"></script>
+<script src="/src/public/public.module.js"></script>
+
+<!--================ public Module ==================-->
+<script src="/src/public/public.routes.js"></script>
+
+<!--================ home ==================-->
+<script src="/src/public/home/Navbar/navbar.component.js"></script>
+<script src="/src/public/home/content/content.component.js"></script>
+<script src="/src/public/home/Navbar/Password.directive.js"></script>
+
+<!--================ subject ==================-->
+<script src="/src/public/stream/subject/subject.service.js"></script>
+<script src="/src/public/stream/subject/subject.controller.js"></script>
+
+
+
+
+
+</html>

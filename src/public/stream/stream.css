@@ -1,0 +1,402 @@
+/*===================================================================== Side bar Styles start  ===========================================================*/
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    border: none;
+    outline-color: rgba(115, 135, 213, 0);
+    outline-style: auto;
+    outline-width: 0.1px;
+}
+
+.navbar-btn:focus {
+    outline-color: #ffffff00;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    perspective: 1500px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #303030;
+    color: #fff;
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: bottom left;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.342);
+    /**/
+}
+
+#sidebar.active {
+    margin-left: -250px;
+    transform: rotateY(100deg);
+}
+
+#sidebar .sidebar-header {
+    padding: 25px;
+    background: #444444;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 160px;
+    height: auto;
+}
+
+#sidebar #menu .components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar #menu p {
+    color: rgba(0, 168, 255, 1);
+    padding: 10px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#sidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background: #00000000;
+    cursor: pointer;
+}
+
+#sidebarCollapse:hover {
+    background: rgb(104, 103, 103);
+}
+
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: rgb(255, 253, 253);
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+    transition-delay: 0.2s;
+}
+
+#sidebarCollapse span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+
+#sidebarCollapse span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#sidebarCollapse span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #content {
+        min-height: 130vh;
+    }
+    #sidebar {
+        margin-left: -250px;
+        transform: rotateY(90deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+    #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+}
+
+
+/*===================================================================== Side bar Styles end  ===========================================================*/
+
+:root {
+    --v-red: rgba(0, 168, 255, 1);
+    --v-white: #ece8e1;
+    --v-black: #0f1923;
+    --v-outline: rgba(236, 232, 225, 0.5);
+}
+
+#btstyle {
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    width: 50%;
+    margin-bottom: 0.5rem;
+    margin-left: 25%;
+    position: relative;
+    display: block;
+    padding: 0.4rem;
+    border: 0;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--v-white);
+}
+
+#btstyle:hover {
+    color: var(--v-white);
+}
+
+#btstyle::before {
+    border-bottom: 0;
+    top: 0;
+}
+
+#btstyle::after {
+    border-top: 0;
+    bottom: 0;
+}
+
+
+/* LABEL  */
+
+.label {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.label:before {
+    content: "";
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+#sidebar #menu .subject .sublink {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    text-align: center;
+}
+
+#sidebar #menu .subjectb .sublink {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    text-align: center;
+}
+
+#sidebar #menu .subjecta .sublink {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    text-align: center;
+}
+
+.subject {
+    border-bottom: 1px solid var(--v-outline);
+}
+
+.subjectb {
+    border-bottom: 1px solid var(--v-outline);
+    border-top: 1px solid var(--v-outline);
+}
+
+.stream {
+    background: #272727;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#sidebar #menu .subject .sublink:hover {
+    color: rgb(254, 254, 255);
+    background: linear-gradient(90deg, rgba(0, 168, 255, 1) 19%, rgba(14, 161, 245, 1) 51%, rgba(74, 184, 248, 1) 71%, rgba(118, 201, 250, 1) 93%, rgba(148, 213, 251, 1) 100%);
+}
+
+#sidebar #menu .subjectb .sublink:hover {
+    color: rgb(254, 254, 255);
+    background: linear-gradient(90deg, rgba(0, 168, 255, 1) 19%, rgba(14, 161, 245, 1) 51%, rgba(74, 184, 248, 1) 71%, rgba(118, 201, 250, 1) 93%, rgba(148, 213, 251, 1) 100%);
+}
+
+#sidebar #menu .subjecta .sublink:hover {
+    color: rgb(254, 254, 255);
+    background: linear-gradient(90deg, rgba(0, 168, 255, 1) 19%, rgba(14, 161, 245, 1) 51%, rgba(74, 184, 248, 1) 71%, rgba(118, 201, 250, 1) 93%, rgba(148, 213, 251, 1) 100%);
+}
+
+
+/* ==================================================Hover Effect =======================================================*/
+
+.hover-effect {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 120%;
+    top: 0;
+    left: -5%;
+    z-index: 1;
+    background-color: var(--v-red);
+    transform: translateX(-100%) skew(-10deg);
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+#btstyle:hover .hover-effect {
+    transform: translateX(0) skew(-10deg);
+}
+
+
+/* Label Text */
+
+.label-text {
+    position: relative;
+    display: block;
+    padding: 0.9rem 1rem;
+    background-color: transparent;
+    z-index: 1;
+}
+
+#btstyle:hover .label-text:after {
+    background-color: var(--v-black);
+}
+
+
+/* OUTLINE BUTTON */
+
+.outline {
+    color: var(--v-white);
+}
+
+.outline .label::before,
+.outline .label::after {
+    border: 1px solid var(--v-outline);
+}
+
+
+/* ==================================================card stayle Effect =======================================================*/
+
+.test {
+    background-color: #272727;
+    border-radius: 1rem;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 1);
+    padding: 15px;
+    margin-top: 25px;
+}
+
+
+/* ==================================================card stayle Effect =======================================================*/
+
+
+/* ==================================================Header style =======================================================*/
+
+h1 {
+    text-align: center;
+    color: #fff;
+    /* margin-top: 15px;
+    margin-bottom: 45px;*/
+    font-size: 35px;
+    /* border: 1px solid var(--v-outline);*/
+    margin: 0;
+}
+
+.uol {
+    border-left: 5px solid #2196f3;
+    padding-right: 5px;
+}
+
+.out {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    position: relative;
+    display: block;
+    padding: 0.4rem;
+    border: 0;
+}
+
+.out::before,
+.out::after {
+    background-color: transparent;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    border: 1px solid var(--v-outline);
+    left: 0;
+}
+
+.out::before {
+    border-bottom: 0;
+    top: 0;
+    height: calc(1% - 0.1rem);
+}
+
+.out::after {
+    border-top: 0;
+    bottom: 0;
+    height: calc(1% - 0.1rem);
+}
+
+
+/* ==================================================Header style =======================================================*/
