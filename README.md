@@ -1,2 +1,2 @@
 # O3-WEB
-Website that create with HTML5 and CSS Using AngularJS For File Routing.
+Website Frontend that create with HTML,CSS Using AngularJS with File Routing for University Web Development Project.
